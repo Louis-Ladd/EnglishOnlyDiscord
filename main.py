@@ -2,6 +2,9 @@ import discord
 from discord.ext.commands import Bot
 import emoji
 
+#Python Version: 3.10.0
+#Version: 0.0.5
+
 def char_is_emoji(char):
     return char in emoji.EMOJI_DATA
 
@@ -20,7 +23,7 @@ async def on_message(message):
         if char > 127462 and char < 127487: #Regonial identifiers. used for flags
             break
         if char < 0 or char > 127 and not char_is_emoji(i): #Unicode latin alphabet range
-            await message.delete()
+            await message.delete() #removes message
             return
 #^^^Bot Events ^^^
 
